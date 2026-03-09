@@ -13,7 +13,7 @@
         }
 
         body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             background-color: var(--bg-color);
             margin: 0;
             display: flex;
@@ -62,19 +62,19 @@
             object-fit: cover;
             border-radius: 18px;
             margin-bottom: 15px;
-            background-color: #eee; /* Заглушка, если фото не прогрузилось */
+            background-color: #eee;
         }
 
         .candidate-name {
             font-size: 1.5rem;
             font-weight: bold;
             margin: 10px 0;
-            color: var(--dark-color);
         }
 
+        /* Стиль кнопки */
         .btn-bot {
             background-color: var(--primary-color);
-            color: white;
+            color: white !important;
             text-decoration: none;
             padding: 20px 50px;
             border-radius: 50px;
@@ -83,14 +83,13 @@
             box-shadow: 0 10px 20px rgba(0, 136, 204, 0.3);
             transition: all 0.3s ease;
             display: inline-block;
-            cursor: pointer;
             border: none;
+            cursor: pointer;
         }
 
         .btn-bot:hover {
             background-color: #007bbd;
             transform: scale(1.05);
-            box-shadow: 0 15px 25px rgba(0, 136, 204, 0.5);
         }
 
         footer {
@@ -101,10 +100,9 @@
             text-align: center;
         }
 
-        /* Адаптация для мобильных */
         @media (max-width: 600px) {
             h1 { font-size: 1.8rem; }
-            .candidate-card { width: 90%; }
+            .candidate-card { width: 85%; }
         }
     </style>
 </head>
@@ -124,22 +122,33 @@
         </div>
     </div>
 
-    <a href="https://t.me/GolosMBOU_bot" target="_blank" class="btn-bot" data-aos="zoom-in" data-aos-delay="600">
+    <a href="https://t.me/GolosMBOU_bot" onclick="openTelegram(event)" class="btn-bot" data-aos="zoom-in" data-aos-delay="600">
         Перейти в Telegram-бота
     </a>
 
     <footer data-aos="fade-up" data-aos-delay="800">
         © 2026 Axioma API <br>
-        Все данные защищены согласно Политике Конфиденциальности
+        Данные защищены хэшированием согласно политике 152-ФЗ
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Инициализация анимации при прокрутке
-        AOS.init({
-            duration: 1000,
-            once: true
-        });
+        AOS.init({ duration: 1000, once: true });
+
+        // Функция принудительного открытия
+        function openTelegram(e) {
+            e.preventDefault();
+            const botUser = "GolosMBOU_bot";
+            
+            // Пробуем открыть через прямой протокол приложения
+            window.location.href = "tg://resolve?domain=" + botUser;
+            
+            // Если через 500мс ничего не произошло (приложение не открылось), 
+            // открываем стандартную веб-ссылку
+            setTimeout(() => {
+                window.open("https://t.me/" + botUser, "_blank");
+            }, 500);
+        }
     </script>
 </body>
 </html>
