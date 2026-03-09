@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Выборы 2026 — Партия "Новая Школа"</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0088cc;
+            --dark-color: #2c3e50;
+            --bg-color: #f4f7f9;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            color: var(--dark-color);
+            overflow-x: hidden;
+        }
+
+        h1 { margin: 20px 0 40px 0; font-size: 2.5rem; text-align: center; }
+
+        .candidates-container {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 50px;
+            padding: 0 20px;
+        }
+
+        .candidate-card {
+            background: white;
+            padding: 20px;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+            width: 280px;
+        }
+
+        .candidate-card:hover { transform: translateY(-15px); }
+
+        .candidate-card img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 18px;
+            margin-bottom: 15px;
+        }
+
+        .candidate-name { font-size: 1.5rem; font-weight: bold; margin: 10px 0; }
+
+        .btn-bot {
+            background-color: var(--primary-color);
+            color: white !important;
+            text-decoration: none;
+            padding: 20px 50px;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            box-shadow: 0 10px 20px rgba(0, 136, 204, 0.3);
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-bot:hover { background-color: #007bbd; transform: scale(1.05); }
+
+        footer { margin-top: 60px; padding-bottom: 20px; font-size: 0.85rem; color: #95a5a6; text-align: center; }
+
+        @media (max-width: 600px) { h1 { font-size: 1.8rem; } .candidate-card { width: 85%; } }
+    </style>
+</head>
+<body>
+
+    <h1 data-aos="fade-down">Выбери своего кандидата</h1>
+
+    <div class="candidates-container">
+        <div class="candidate-card" data-aos="fade-right" data-aos-delay="200">
+            <img src="Meshi.jpg" alt="Игнатов Илья">
+            <div class="candidate-name">Игнатов Илья</div>
+        </div>
+
+        <div class="candidate-card" data-aos="fade-left" data-aos-delay="400">
+            <img src="MeshD.jpg" alt="Мешков Денис">
+            <div class="candidate-name">Мешков Денис</div>
+        </div>
+    </div>
+
+    <a href="https://t.me/GolosMBOU_bot" class="btn-bot" data-aos="zoom-in" data-aos-delay="600">
+        Перейти в Telegram-бота
+    </a>
+
+    <footer data-aos="fade-up" data-aos-delay="800">
+        © 2026 Axioma API <br>
+        Прозрачность обеспечена хэшированием данных
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
+</body>
+</html>
+
