@@ -25,12 +25,7 @@
             overflow-x: hidden;
         }
 
-        h1 {
-            margin: 20px 0 40px 0;
-            font-size: 2.5rem;
-            text-align: center;
-            padding: 0 10px;
-        }
+        h1 { margin: 20px 0 40px 0; font-size: 2.5rem; text-align: center; }
 
         .candidates-container {
             display: flex;
@@ -51,10 +46,7 @@
             width: 280px;
         }
 
-        .candidate-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
+        .candidate-card:hover { transform: translateY(-15px); }
 
         .candidate-card img {
             width: 100%;
@@ -62,16 +54,10 @@
             object-fit: cover;
             border-radius: 18px;
             margin-bottom: 15px;
-            background-color: #eee;
         }
 
-        .candidate-name {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin: 10px 0;
-        }
+        .candidate-name { font-size: 1.5rem; font-weight: bold; margin: 10px 0; }
 
-        /* Стиль кнопки */
         .btn-bot {
             background-color: var(--primary-color);
             color: white !important;
@@ -83,27 +69,13 @@
             box-shadow: 0 10px 20px rgba(0, 136, 204, 0.3);
             transition: all 0.3s ease;
             display: inline-block;
-            border: none;
-            cursor: pointer;
         }
 
-        .btn-bot:hover {
-            background-color: #007bbd;
-            transform: scale(1.05);
-        }
+        .btn-bot:hover { background-color: #007bbd; transform: scale(1.05); }
 
-        footer {
-            margin-top: 60px;
-            padding-bottom: 20px;
-            font-size: 0.85rem;
-            color: #95a5a6;
-            text-align: center;
-        }
+        footer { margin-top: 60px; padding-bottom: 20px; font-size: 0.85rem; color: #95a5a6; text-align: center; }
 
-        @media (max-width: 600px) {
-            h1 { font-size: 1.8rem; }
-            .candidate-card { width: 85%; }
-        }
+        @media (max-width: 600px) { h1 { font-size: 1.8rem; } .candidate-card { width: 85%; } }
     </style>
 </head>
 <body>
@@ -122,33 +94,18 @@
         </div>
     </div>
 
-    <a href="https://t.me/GolosMBOU_bot" onclick="openTelegram(event)" class="btn-bot" data-aos="zoom-in" data-aos-delay="600">
+    <a href="https://t.me/GolosMBOU_bot" class="btn-bot" data-aos="zoom-in" data-aos-delay="600">
         Перейти в Telegram-бота
     </a>
 
     <footer data-aos="fade-up" data-aos-delay="800">
         © 2026 Axioma API <br>
-        Данные защищены хэшированием согласно политике 152-ФЗ
+        Прозрачность обеспечена хэшированием данных
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 1000, once: true });
-
-        // Функция принудительного открытия
-        function openTelegram(e) {
-            e.preventDefault();
-            const botUser = "GolosMBOU_bot";
-            
-            // Пробуем открыть через прямой протокол приложения
-            window.location.href = "tg://resolve?domain=" + botUser;
-            
-            // Если через 500мс ничего не произошло (приложение не открылось), 
-            // открываем стандартную веб-ссылку
-            setTimeout(() => {
-                window.open("https://t.me/" + botUser, "_blank");
-            }, 500);
-        }
     </script>
 </body>
 </html>
