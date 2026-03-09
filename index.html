@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Выборы 2026 — Axioma API</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0088cc;
+            --dark-color: #2c3e50;
+            --bg-color: #f4f7f9;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            color: var(--dark-color);
+        }
+
+        h1 {
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            text-align: center;
+        }
+
+        .candidates-container {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+
+        .candidate-card {
+            background: white;
+            padding: 15px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .candidate-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .candidate-card img {
+            width: 250px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 15px;
+        }
+
+        .candidate-name {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .btn-bot {
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0, 136, 204, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn-bot:hover {
+            background-color: #0077b5;
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 136, 204, 0.6);
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 0.9rem;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 data-aos="fade-down">Выбери своего кандидата</h1>
+
+    <div class="candidates-container">
+        <div class="candidate-card" data-aos="fade-right" data-aos-delay="200">
+            <img src="Meshi.jpg" alt="Игнатов Илья">
+            <div class="candidate-name">Игнатов Илья</div>
+        </div>
+
+        <div class="candidate-card" data-aos="fade-left" data-aos-delay="400">
+            <img src="MeshD.jpg" alt="Мешков Денис">
+            <div class="candidate-name">Мешков Денис</div>
+        </div>
+    </div>
+
+    <a href="https://t.me/ТВОЙ_БОТ_USERNAME" class="btn-bot" data-aos="zoom-in" data-aos-delay="600">
+        Перейти в Telegram-бота
+    </a>
+
+    <footer data-aos="fade-up" data-aos-delay="800">
+        © 2026 Axioma API
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // Длительность анимации (1 сек)
+            once: true      // Анимация срабатывает только один раз
+        });
+    </script>
+</body>
+</html>
