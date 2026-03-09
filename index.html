@@ -13,7 +13,7 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg-color);
             margin: 0;
             display: flex;
@@ -22,71 +22,89 @@
             justify-content: center;
             min-height: 100vh;
             color: var(--dark-color);
+            overflow-x: hidden;
         }
 
         h1 {
-            margin-bottom: 40px;
+            margin: 20px 0 40px 0;
             font-size: 2.5rem;
             text-align: center;
+            padding: 0 10px;
         }
 
         .candidates-container {
             display: flex;
-            gap: 40px;
+            gap: 30px;
             flex-wrap: wrap;
             justify-content: center;
             margin-bottom: 50px;
+            padding: 0 20px;
         }
 
         .candidate-card {
             background: white;
-            padding: 15px;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            padding: 20px;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
             text-align: center;
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
+            width: 280px;
         }
 
         .candidate-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
         }
 
         .candidate-card img {
-            width: 250px;
-            height: 350px;
+            width: 100%;
+            height: 380px;
             object-fit: cover;
-            border-radius: 15px;
+            border-radius: 18px;
             margin-bottom: 15px;
+            background-color: #eee; /* Заглушка, если фото не прогрузилось */
         }
 
         .candidate-name {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             font-weight: bold;
             margin: 10px 0;
+            color: var(--dark-color);
         }
 
         .btn-bot {
             background-color: var(--primary-color);
             color: white;
             text-decoration: none;
-            padding: 18px 40px;
+            padding: 20px 50px;
             border-radius: 50px;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: bold;
-            box-shadow: 0 5px 15px rgba(0, 136, 204, 0.4);
+            box-shadow: 0 10px 20px rgba(0, 136, 204, 0.3);
             transition: all 0.3s ease;
+            display: inline-block;
+            cursor: pointer;
+            border: none;
         }
 
         .btn-bot:hover {
-            background-color: #0077b5;
+            background-color: #007bbd;
             transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(0, 136, 204, 0.6);
+            box-shadow: 0 15px 25px rgba(0, 136, 204, 0.5);
         }
 
         footer {
-            margin-top: 50px;
-            font-size: 0.9rem;
-            color: #7f8c8d;
+            margin-top: 60px;
+            padding-bottom: 20px;
+            font-size: 0.85rem;
+            color: #95a5a6;
+            text-align: center;
+        }
+
+        /* Адаптация для мобильных */
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8rem; }
+            .candidate-card { width: 90%; }
         }
     </style>
 </head>
@@ -106,26 +124,22 @@
         </div>
     </div>
 
-<a href="tg://resolve?domain=GolosMBOU_bot" class="btn-bot" data-aos="zoom-in" data-aos-delay="600">
-    Перейти в Telegram-бота
-</a>
+    <a href="https://t.me/GolosMBOU_bot" target="_blank" class="btn-bot" data-aos="zoom-in" data-aos-delay="600">
+        Перейти в Telegram-бота
+    </a>
 
     <footer data-aos="fade-up" data-aos-delay="800">
-        © 2026 Axioma API
+        © 2026 Axioma API <br>
+        Все данные защищены согласно Политике Конфиденциальности
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // Инициализация анимации при прокрутке
         AOS.init({
-            duration: 1000, // Длительность анимации (1 сек)
-            once: true      // Анимация срабатывает только один раз
+            duration: 1000,
+            once: true
         });
     </script>
 </body>
 </html>
-
-
-
-
-
-
